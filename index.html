@@ -15,7 +15,10 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container-fluid">
+    <!-- en móvil se ve bien con container, el fluid permite aprovechar
+         mejor el espacio en la versión de escritorio.
+    -->
     <header>
       <h1 class="text-center">Juan Camilo Higuera</h1>
     </header>
@@ -46,18 +49,29 @@
         </ul>
       </div>
     </nav>
-    <section id="presentation">
+    <section id="presentation" class="container-fluid">
       <br>
-      <h2>Presentation</h2>
+      <h2 class="card-title">Presentation</h2>
       <div class="row">
-        <div class="col-4" id="img-personal">
-          <img src="/Entrega1HTML/img/IMG-20190602-WA0030~3.jpg" class="img-fluid max-width: 100%" height="auto"
-            alt="Imagen Personal" title="Imagen Personal">
-        </div>
-        <div class="col-8">
+        <div class="col">
           <div class="card-deck">
             <div class="card text-white bg-dark mb-3">
-              <div class="card-header">Who am I?</div>
+
+              <!-- encerrar la imagen personal en otra card me parece más consistente
+                   y ayuda a redimensionarla.
+               -->
+              <div class="card-body">
+                <h5 class="card-title">Picture</h5>
+                <img id="img-personal" src="/Entrega1HTML/img/IMG-20190602-WA0030~3.jpg"
+                  class="img-fluid max-width: 100%" height="auto" alt="Imagen Personal" title="Imagen Personal">
+              </div>
+            </div>
+            <div class="card text-white bg-dark mb-3">
+
+              <!-- Los card title hacen un buen papel de headers
+                   por lo que creo que los titles no son necesarios,
+                   además de que son todos iguales
+              -->
               <div class="card-body">
                 <h5 class="card-title">General Information</h5>
                 <p class="card-text">Born in Bogotá, Colombia, I'm 20 years old and I'm Currently on my seventh semester
@@ -65,7 +79,6 @@
               </div>
             </div>
             <div class="card text-white bg-dark mb-3">
-              <div class="card-header">Who am I?</div>
               <div class="card-body">
                 <h5 class="card-title">Contact Information</h5>
                 <p class="card-text">My email is <a href="mailto:jc.higuera@uniandes.edu.co"
@@ -73,7 +86,6 @@
               </div>
             </div>
             <div class="card text-white bg-dark mb-3">
-              <div class="card-header">Who am I?</div>
               <div class="card-body">
                 <h5 class="card-title">Social Information</h5>
                 <p class="card-text">My social media profiles are:</p>
@@ -85,35 +97,39 @@
         </div>
       </div>
     </section>
-    <section id="projects">
+    <section id="projects" class="container-fluid">
       <br>
-      <h2>Projects</h2>
-      <div class="row">
-        <div class="col frame">
-          <h3 class="text-center">Project 1</h3>
+      <h2 class="card-title">Projects</h2>
+      <div class="row card-deck">
+        <div class="col frame card text-white bg-dark mb-3">
+          <!-- las cards con fondo negro son consistentes con las del inicio
+          -->
+          <h3 class="text-center card-header">Project 1</h3>
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dWjZrQVdX_U"
               allowfullscreen></iframe>
           </div>
-          <p>This project was made for the Communications Infrastructure class in 2020. It is a UDP server-client
+          <p class="card-body">This project was made for the Communications Infrastructure class in 2020. It is a UDP
+            server-client
             application built using python</p>
         </div>
-        <div class="col frame">
-          <h3 class="text-center">Project 2</h3>
+        <div class="col frame card text-white bg-dark mb-3">
+          <h3 class="text-center card-header">Project 2</h3>
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7wFulRSA-kI"
               allowfullscreen></iframe>
           </div>
-          <p>This project was made for the Software Architecture class during the fall semester of 2020. It encompasses
+          <p class="card-body">This project was made for the Software Architecture class during the fall semester of
+            2020. It encompasses
             the software architecture for the Booklick business.</p>
         </div>
       </div>
     </section>
-    <section id="hobbies">
+    <section id="hobbies" class="container-fluid">
       <br>
-      <h2>Hobbies and Interests</h2>
+      <h2 class="card-title">Hobbies and Interests</h2>
       <div class="card-deck">
-        <div class="card tarjeta-foto">
+        <div class="card tarjeta-foto text-white bg-dark mb-3">
           <img class="card-img-top" src="/Entrega1HTML/img/f1.jpg" alt="Formula 1">
           <div class="card-body">
             <h5 class="card-title">Motorsport</h5>
@@ -122,7 +138,7 @@
             <a href="https://f1.com" class="btn btn-primary">F1 Website</a>
           </div>
         </div>
-        <div class="card tarjeta-foto">
+        <div class="card tarjeta-foto text-white bg-dark mb-3">
           <img class="card-img-top" src="/Entrega1HTML/img/futbol.jpg" alt="Champions League">
           <div class="card-body">
             <h5 class="card-title">Soccer</h5>
@@ -130,7 +146,7 @@
             <a href="https://www.uefa.com/uefachampionsleague/" class="btn btn-primary">UCL Website</a>
           </div>
         </div>
-        <div class="card tarjeta-foto">
+        <div class="card tarjeta-foto text-white bg-dark mb-3">
           <img class="card-img-top" src="/Entrega1HTML/img/tech.jpg" alt="Technology">
           <div class="card-body">
             <h5 class="card-title">Technology</h5>
@@ -139,9 +155,10 @@
             <a href="https://apple.com" class="btn btn-primary">Apple Website</a>
           </div>
         </div>
-        <div class="card tarjeta-foto">
+        <div id="audio-card" class="card tarjeta-foto text-white bg-dark mb-3">
           <audio controls class="embed-responsive-item">
             <source src="/Entrega1HTML/img/Rick Astley - Never Gonna Give You Up (Video).mp3">
+            <!--                                                        lol                 -->
           </audio>
           <div class="card-body">
             <h5 class="card-title">Music</h5>
@@ -152,15 +169,19 @@
         </div>
       </div>
     </section>
-    <section id="experience">
+    <section id="experience" class="container-fluid">
       <br>
-      <h2>Experience and Education</h2>
+      <h2 class="card-title">Experience and Education</h2>
       <ul class="list-group">
-        <li class="list-group-item">Graduated from high school in 2017.</li>
-        <li class="list-group-item">Learned Spanish, English, and basic German and Italian.</li>
-        <li class="list-group-item">Started the Software Engineering bachelors degree in 2018.</li>
-        <li class="list-group-item">Investigation assistant during fall semester of 2020.</li>
-        <li class="list-group-item">Teachers assistant during spring semester of 2021.</li>
+        <li class="text-center list-group-item bg-dark text-white">Graduated from high school in 2017.</li>
+        <li class="text-center list-group-item bg-dark text-white">Learned Spanish, English, and basic German and
+          Italian.</li>
+        <li class="text-center list-group-item bg-dark text-white">Started the Software Engineering bachelors degree in
+          2018.</li>
+        <li class="text-center list-group-item bg-dark text-white">Investigation assistant during fall semester of 2020.
+        </li>
+        <li class="text-center list-group-item bg-dark text-white">Teachers assistant during spring semester of 2021.
+        </li>
       </ul>
     </section>
     <br>

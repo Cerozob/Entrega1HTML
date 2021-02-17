@@ -1,25 +1,54 @@
+body {
+	background-color: #1e1e1f;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	color: #e5e5e5; /*esq cambié el fondo y no se veía*/
+}
+
 .card {
-  min-width: 200px;
-  max-width: 18rem;
+	min-width: 200px;
+}
+
+.card-title {
+	text-align: center;
 }
 
 #img-personal {
-  min-width: 200px;
+	border-radius: 5px;
 }
 
 .frame {
-  min-width: 300px;
+	min-width: 300px;
 }
 
-.tarjeta-foto {
-  min-width: none;
-  width: 18rem;
-}
+/* quité el tarjeta-foto porque
+   las tarjetas se ajustan bien gracias al deck
+   que ya estaba puesto 
+*/
 
 .myfooter {
-  padding: 2.5rem 0;
-  color: #999;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-top: 0.05rem solid #e5e5e5;
+	padding: 2.5rem 0;
+	color: #999;
+	text-align: center;
+	background-color: #f9f9f9;
+	border-top: 0.05rem solid #e5e5e5;
+}
+
+.btn-primary {
+	margin: 2%; /*evita el overlap entre botones en la versión móvil*/
+}
+
+#audio-card {
+	/* se necesita un ancho mínimo por el audio source*/
+	min-width: 25vw;
+}
+
+audio {
+	width: 90%; /*se ajusta con la card*/
+	margin: 5%; /* no se pega al borde*/
 }
